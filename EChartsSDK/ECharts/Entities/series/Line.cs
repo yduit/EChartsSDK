@@ -17,6 +17,9 @@ namespace ECharts.Entities.series
 
         public object step { get; set; }
 
+        public bool? connectNulls { get; set; }
+
+        public bool? clipOverflow { get; set; }
 
 
         public SamplingType sampling { get; set; }
@@ -64,5 +67,14 @@ namespace ECharts.Entities.series
             return this;
         }
 
+        public Line ConnectNulls(bool connectNulls) {
+            this.connectNulls = connectNulls;
+            return this;
+        }
+
+        public Line ClipOverflow(bool clipOverflow) {
+            this.clipOverflow = clipOverflow;
+            return this;
+        }
     }
 }
