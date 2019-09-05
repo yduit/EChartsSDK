@@ -16,6 +16,7 @@ using System.Web.Http;
 
 namespace EChartsWeb.Apis
 {
+    //[Route("api/Controller")]
     public class ChartsDataController : ApiController
     {
         #region tooltip
@@ -265,12 +266,12 @@ namespace EChartsWeb.Apis
 
             ChartOption option = new ChartOption();
 
-            option.title = new Title()
+            option.title = new List<Title> {new Title()
             {
                 show = true,
                 text = "未来一周天气变化",
                 subtext = "纯虚构数据"
-            };
+            } };
 
 
             option.tooltip = new ToolTip()
@@ -448,11 +449,11 @@ namespace EChartsWeb.Apis
 
             ChartOption option = new ChartOption();
 
-            option.title = new Title()
+            option.title = new List<Title> {new Title()
             {
                 text = "某楼盘销售情况",
                 subtext = "纯属虚构"
-            };
+            } };
 
             option.tooltip = new ToolTip()
             {
@@ -631,7 +632,7 @@ namespace EChartsWeb.Apis
                    + params[1].seriesName + ' : ' + -params[1].value + ' (mm)';}"));
             option.Legend("流量", "降雨量").Legend().X(HorizontalType.left);
 
-            option.DataZoom().Show(true).Realtime(true).Start(0).End(100);
+            //option.DataZoom().Show(true).Realtime(true).Start(0).End(100);
 
             var x = new CategoryAxis();
             x.BoundaryGap(false).AxisLine().OnZero(false);
@@ -748,7 +749,7 @@ namespace EChartsWeb.Apis
                            + params.value[1] + ', ' 
                            + params.value[2];
                 }"));
-            option.DataZoom().Show(true).Start(70);
+            //option.DataZoom().Show(true).Start(70);
             option.Legend().Data("series1");
             option.Grid().Y2(80);
             option.XAxis(new TimeAxis().SplitNumber(10));
@@ -1297,9 +1298,9 @@ namespace EChartsWeb.Apis
             time.Data("2002-01-01", "2003-01-01", "2004-01-01", "2005-01-01", "2006-01-01",
             "2007-01-01", "2008-01-01", "2009-01-01", "2010-01-01")
             .AutoPlay(true).PlayInterval(1000);
-            time.Label().Formatter(new JRaw(@" function(s) {
-                return s.slice(0, 4);
-            }"));
+            //time.Label().Formatter(new JRaw(@" function(s) {
+            //    return s.slice(0, 4);
+            //}"));
 
 
           
@@ -2020,9 +2021,9 @@ namespace EChartsWeb.Apis
             timeline.Data("2002-01-01", "2003-01-01", "2004-01-01", "2005-01-01", "2006-01-01",
             "2007-01-01", "2008-01-01", "2009-01-01", "2010-01-01", "2011-01-01")
             .AutoPlay(true).PlayInterval(1000);
-            timeline.Label().Formatter(new JRaw(@"function(s) {
-                return s.slice(0, 4);
-            }"));
+            //timeline.Label().Formatter(new JRaw(@"function(s) {
+            //    return s.slice(0, 4);
+            //}"));
 
             ChartOption option = new ChartOption();
             option.timeline = timeline;
@@ -2297,7 +2298,7 @@ namespace EChartsWeb.Apis
 
             option.ToolBox().Show(true).SetFeature(feature);
 
-            option.DataZoom().Show(true).Realtime(true).Start(0).End(50);
+            //option.DataZoom().Show(true).Realtime(true).Start(0).End(50);
 
             var x = new CategoryAxis();
             x.BoundaryGap(true).AxisTick().OnGap(false);
@@ -2368,7 +2369,7 @@ namespace EChartsWeb.Apis
 
             option.ToolBox().Show(true).SetFeature(feature);
 
-            option.DataZoom().Show(true).Realtime(true).Start(50).End(100);
+            //option.DataZoom().Show(true).Realtime(true).Start(50).End(100);
 
             var x = new CategoryAxis();
             x.BoundaryGap(true).AxisTick().OnGap(false);
@@ -2845,9 +2846,10 @@ namespace EChartsWeb.Apis
             timeline.Data("2013-01-01", "2013-02-01", "2013-03-01", "2013-04-01", "2013-05-01",
             "2013-06-01", "2013-07-01", "2013-08-01", "2013-09-01", "2013-10-01", "2013-11-01",
              "2013-12-01")
-                .Label().Formatter(new JRaw(@" function(s) {
-                return s.slice(0, 7);
-            }"));
+            //    .Label().Formatter(new JRaw(@" function(s) {
+            //    return s.slice(0, 7);
+            //}"))
+            ;
             ChartOption option = new ChartOption();
             option.timeline = timeline;
 
