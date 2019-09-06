@@ -104,7 +104,7 @@ namespace ECharts
             Newtonsoft.Json.JsonTextWriter writer = new JsonTextWriter(sw);
             writer.Formatting = Formatting.None;
             writer.QuoteChar = '"';
-            writer.QuoteName = false;
+            //writer.QuoteName = false; //ydu
             json.Serialize(writer, value);
 
             string output = sw.ToString();
